@@ -404,13 +404,9 @@
 
     <div class="hero">
       <section class="panel invite-panel">
-        <div class="frame">
-          <img
-            id="inviteImage"
-            class="invite-image"
-            src="IMG_8249.JPEG"
-            alt="Berenice and Ricky wedding invitation"
-          />
+        <div class="frame" id="inviteGallery">
+          <img class="invite-image" src="IMG_8249.JPEG" />
+          <img class="invite-image" src="IMG_8249_2.JPEG" />
         </div>
       </section>
 
@@ -571,7 +567,7 @@
   <script>
     const translations = {
       en: {
-        image: 'IMG_8249.JPEG',
+        images: ['IMG_8249.JPEG','IMG_8249_2.JPEG'],
         langField: 'English',
         name: 'Full Name',
         phone: 'Phone Number',
@@ -587,7 +583,7 @@
         error: 'There was a problem sending the RSVP. Please try again.'
       },
       es: {
-        image: 'IMG_8251.JPEG',
+        images: ['IMG_8251.JPEG','IMG_8251_2.JPEG'],
         langField: 'Español',
         name: 'Nombre Completo',
         phone: 'Número de Teléfono',
@@ -607,7 +603,7 @@
     const params = new URLSearchParams(window.location.search);
     let currentLang = params.get('lang') === 'es' ? 'es' : 'en';
 
-    const inviteImage = document.getElementById('inviteImage');
+    const inviteGallery = document.getElementById('inviteGallery');
     const form = document.getElementById('rsvpForm');
     const successNote = document.getElementById('successNote');
     const errorNote = document.getElementById('errorNote');
@@ -621,8 +617,13 @@
     function applyLanguage(lang) {
       currentLang = lang;
       const t = translations[lang];
-      inviteImage.src = t.image;
-      inviteImage.alt = lang === 'es' ? 'Invitación de boda de Berenice y Ricky' : 'Berenice and Ricky wedding invitation';
+      inviteGallery.innerHTML = '';
+      t.images.forEach(img => {
+        const image = document.createElement('img');
+        image.className = 'invite-image';
+        image.src = img;
+        inviteGallery.appendChild(image);
+      });
       languageField.value = t.langField;
 
       langEn.classList.toggle('hidden', lang !== 'en');
