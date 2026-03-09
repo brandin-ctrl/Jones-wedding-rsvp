@@ -1,685 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berenice & Ricky | Wedding RSVP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-  <meta name="description" content="Berenice and Ricky wedding invitation and RSVP." />
-  <style>
-    :root {
-      --bg: #1f3f36;
-      --bg-2: #274b41;
-      --paper: rgba(27, 57, 49, 0.82);
-      --paper-2: rgba(255,255,255,0.05);
-      --gold: #d4af37;
-      --gold-soft: #b7902a;
-      --cream: #f7f3e9;
-      --muted: #eadfca;
-      --line: rgba(212, 175, 55, 0.30);
-      --shadow: 0 24px 80px rgba(0,0,0,0.34);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { box-sizing: border-box; }
+<title>Berenice & Ricky | Wedding RSVP</title>
 
-    html { scroll-behavior: smooth; }
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
-    body {
-      margin: 0;
-      color: var(--cream);
-      font-family: 'Playfair Display', Georgia, serif;
-      background:
-        radial-gradient(circle at top left, rgba(212,175,55,0.14), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(77, 120, 104, 0.16), transparent 34%),
-        linear-gradient(180deg, #1f3f36 0%, #274b41 100%);
-      min-height: 100vh;
-    }
+<style>
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.16;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(circle at center, black 25%, transparent 80%);
-    }
+:root{
+--bg:#1f3f36;
+--gold:#d4af37;
+--cream:#f7f3e9;
+}
 
-    .page {
-      width: min(1180px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 24px 0 56px;
-      position: relative;
-      z-index: 1;
-    }
+body{
+margin:0;
+font-family:'Playfair Display',serif;
+background:linear-gradient(180deg,#1f3f36,#274b41);
+color:var(--cream);
+}
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 10px 4px 22px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+.page{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
 
-    .brand {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.32em;
-      font-size: 0.72rem;
-    }
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
 
-    .lang-switch {
-      display: inline-flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+.invite img{
+width:100%;
+border-radius:20px;
+}
 
-    .lang-switch a {
-      text-decoration: none;
-      color: var(--cream);
-      border: 1px solid var(--line);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      background: rgba(255,255,255,0.03);
-      transition: 0.18s ease;
-    }
+.right{
+text-align:center;
+padding:40px;
+background:rgba(0,0,0,0.25);
+border-radius:25px;
+}
 
-    .lang-switch a.active,
-    .lang-switch a:hover {
-      background: linear-gradient(180deg, #e1c58f, #c89a58);
-      color: #1a1510;
-      border-color: transparent;
-    }
+.crest{
+font-family:'Great Vibes',cursive;
+font-size:64px;
+color:var(--gold);
+}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 24px;
-      align-items: stretch;
-    }
+.names{
+font-family:'Great Vibes',cursive;
+font-size:72px;
+}
 
-    .panel {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      border-radius: 30px;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
-    }
+.date{
+letter-spacing:6px;
+margin:10px 0 20px;
+}
 
-    .invite-panel {
-      padding: 20px;
-      position: relative;
-    }
+.message{
+max-width:450px;
+margin:auto;
+line-height:1.7;
+}
 
-    .invite-panel::before,
-    .content-panel::before {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(212,176,122,0.16);
-      border-radius: 22px;
-      pointer-events: none;
-    }
+.rsvp{
+margin-top:30px;
+}
 
-    .frame {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(212,176,122,0.2);
-      background: #12181c;
-      position: relative;
-      min-height: 100%;
-    }
+button{
+padding:14px 20px;
+border-radius:30px;
+border:none;
+margin:10px;
+cursor:pointer;
+font-size:16px;
+}
 
-    .invite-image {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 880px;
-      filter: saturate(1.03) contrast(1.03);
-    }
+.yes{
+background:var(--gold);
+}
 
-    .content-panel {
-      position: relative;
-      padding: 34px 32px;
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.10), transparent 26%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,0.05), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    }
+.no{
+background:transparent;
+border:1px solid var(--gold);
+color:white;
+}
 
-    .crest {
-      color: var(--gold);
-      font-size: clamp(4.1rem, 10vw, 6rem);
-      font-family: 'Great Vibes', cursive;
-      text-align: center;
-      line-height: 0.9;
-      margin-top: 0;
-      margin-bottom: 10px;
-      opacity: 0.98;
-      text-shadow: 0 2px 18px rgba(212,175,55,0.22);
-    }
+form{
+display:none;
+margin-top:30px;
+}
 
-    .eyebrow {
-      text-align: center;
-      color: var(--gold);
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+input,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:8px;
+border:none;
+}
 
-    .names {
-      text-align: center;
-      font-size: clamp(4rem, 8vw, 6.2rem);
-      font-family: 'Great Vibes', cursive;
-      line-height: 0.84;
-      margin-bottom: 2px;
-      letter-spacing: 0.01em;
-      text-shadow: 0 2px 18px rgba(212,175,55,0.16);
-      color: #fbf6ed;
-    }
+.submit{
+background:var(--gold);
+}
 
-    .amp {
-      text-align: center;
-      font-size: 1.55rem;
-      color: var(--gold);
-      margin: 2px 0 6px;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 500;
-    }
-
-    .date {
-      text-align: center;
-      font-size: 1.12rem;
-      letter-spacing: 0.34em;
-      color: var(--muted);
-      margin: 18px 0 16px;
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .section {
-      border-top: 0;
-      padding-top: 16px;
-      margin-top: 16px;
-    }
-
-    .section:first-of-type {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.72rem;
-      font-family: Arial, Helvetica, sans-serif;
-      margin-bottom: 8px;
-    }
-
-    .text {
-      line-height: 1.75;
-      font-size: 1.12rem;
-      color: var(--cream);
-      font-family: 'Playfair Display', serif;
-    }
-
-    .script {
-      display: block;
-      font-style: italic;
-      font-size: 1.34rem;
-      color: #f1e4cf;
-      margin-bottom: 6px;
-    }
-
-    .rsvp-box {
-      margin-top: 22px;
-      padding: 20px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: var(--paper-2);
-    }
-
-    .rsvp-title {
-      font-size: 2.35rem;
-      text-align: center;
-      margin: 0 0 10px;
-      font-family: 'Great Vibes', cursive;
-      font-weight: 400;
-      color: #fbf5ec;
-    }
-
-    .rsvp-copy {
-      text-align: center;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 1.02rem;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 18px;
-    }
-
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      appearance: none;
-      border: none;
-      cursor: pointer;
-      border-radius: 999px;
-      padding: 15px 18px;
-      font-size: 0.98rem;
-      font-weight: 600;
-      font-family: Arial, Helvetica, sans-serif;
-      transition: 0.18s ease;
-    }
-
-    button:hover { transform: translateY(-1px); }
-
-    .btn-gold {
-      background: linear-gradient(180deg, #e7c98f, #c59653);
-      color: #1b1610;
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--cream);
-      border: 1px solid var(--line);
-    }
-
-    .response-note,
-    .success-note,
-    .error-note {
-      display: none;
-      margin-top: 14px;
-      border-radius: 16px;
-      padding: 14px 16px;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--muted);
-    }
-
-    .success-note { color: #dfead4; }
-    .error-note { color: #f1c7c1; }
-
-    form {
-      display: none;
-      margin-top: 18px;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
-
-    form.show { display: block; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .field { margin-bottom: 14px; }
-    .field.full { grid-column: 1 / -1; }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 0.9rem;
-      font-family: Arial, Helvetica, sans-serif;
-      letter-spacing: 0.02em;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.045);
-      color: var(--cream);
-      padding: 14px 14px;
-      font-size: 0.98rem;
-      font-family: Arial, Helvetica, sans-serif;
-      outline: none;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(212,176,122,0.12);
-    }
-
-    textarea {
-      min-height: 105px;
-      resize: vertical;
-    }
-
-    .submit {
-      width: 100%;
-      margin-top: 6px;
-    }
-
-    .foot {
-      margin-top: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #cbb89f;
-      line-height: 1.6;
-      font-size: 0.87rem;
-      text-align: center;
-    }
-
-    .hidden { display: none !important; }
-
-    @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .invite-image {
-        min-height: auto;
-        max-height: 860px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page { width: min(100% - 16px, 1180px); }
-      .content-panel { padding: 24px 18px; }
-      .invite-panel { padding: 14px; }
-      .topbar { align-items: flex-start; flex-direction: column; }
-      .actions, .grid { grid-template-columns: 1fr; }
-      .names { font-size: 2.5rem; }
-      .date { letter-spacing: 0.18em; font-size: 1rem; }
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="topbar">
-      <div class="brand">Wedding Invitation</div>
-      <div class="lang-switch">
-        <a href="?lang=en" id="linkEn">English</a>
-        <a href="?lang=es" id="linkEs">Español</a>
-      </div>
-    </div>
 
-    <div class="hero">
-      <section class="panel invite-panel">
-        <div class="frame" id="inviteGallery">
-          <img class="invite-image" src="IMG_8249.JPEG" />
-          <img class="invite-image" src="IMG_8249_2.JPEG" />
-        </div>
-      </section>
+<div class="page">
 
-      <section class="panel content-panel">
-        <div class="crest">B &amp; R</div>
+<div class="hero">
 
-        <div class="lang lang-en">
-          <div class="eyebrow">Kindly reply</div>
-          <div class="names">Berenice</div>
-          <div class="amp">and</div>
-          <div class="names">Ricky</div>
-          <div class="date">23 May 2026</div>
-          <div style="width: 140px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 10px;"></div>
+<div class="invite">
+<img src="IMG_8249.JPEG">
+<img src="IMG_8249_2.JPEG">
+</div>
 
-          <div class="section" style="text-align:center; max-width: 520px; margin: 0 auto;">
-            <div class="text">
-              With joyful hearts, we invite you to celebrate this special day with us. Your presence would mean so much as we begin this new chapter together.
-            </div>
-          </div>
+<div class="right">
 
-          <div class="rsvp-box">
-            <h2 class="rsvp-title">Will you be joining us?</h2>
-            <div class="rsvp-copy">
-              Please let us know if you will be attending. If yes, kindly complete the RSVP information below.
-            </div>
-            <div class="actions">
-              <button class="btn-gold" type="button" data-open-form>Yes, I will attend</button>
-              <button class="btn-ghost" type="button" data-decline>I’m unable to attend</button>
-            </div>
-            <div class="response-note" data-decline-note>
-              Thank you for letting us know. You will be missed on this special day.
-            </div>
-          </div>
-        </div>
+<div class="crest">B & R</div>
 
-        <div class="lang lang-es hidden">
-          <div class="eyebrow">Confirme su asistencia</div>
-          <div class="names">Berenice</div>
-          <div class="amp">y</div>
-          <div class="names">Ricky</div>
-          <div class="date">23 Mayo 2026</div>
-          <div style="width: 140px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 10px;"></div>
+<div class="names">Berenice</div>
+<div>and</div>
+<div class="names">Ricky</div>
 
-          <div class="section" style="text-align:center; max-width: 520px; margin: 0 auto;">
-            <div class="text">
-              Con gran alegría, le invitamos a celebrar este día tan especial con nosotros. Su presencia significaría mucho para nosotros al comenzar esta nueva etapa juntos.
-            </div>
-          </div>
+<div class="date">23 MAY 2026</div>
 
-          <div class="rsvp-box">
-            <h2 class="rsvp-title">¿Nos acompañará?</h2>
-            <div class="rsvp-copy">
-              Por favor indíquenos si asistirá. Si su respuesta es sí, complete la información de RSVP a continuación.
-            </div>
-            <div class="actions">
-              <button class="btn-gold" type="button" data-open-form>Sí, asistiré</button>
-              <button class="btn-ghost" type="button" data-decline>No podré asistir</button>
-            </div>
-            <div class="response-note" data-decline-note>
-              Gracias por avisarnos. Le extrañaremos en este día tan especial.
-            </div>
-          </div>
-        </div>
+<div class="message">
 
-        <form id="rsvpForm" name="wedding-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="wedding-rsvp" />
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="language" id="languageField" value="English" />
-          <input type="hidden" name="rsvp_status" value="Attending" />
-          <div class="grid">
-            <div class="field">
-              <label id="labelName" for="guestName">Full Name</label>
-              <input id="guestName" name="guest_name" type="text" required />
-            </div>
-            <div class="field">
-              <label id="labelPhone" for="phone">Phone Number</label>
-              <input id="phone" name="phone" type="tel" required />
-            </div>
-            <div class="field">
-              <label id="labelEmail" for="email">Email Address</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div class="field">
-              <label id="labelCount" for="guestCount">How Many Attending?</label>
-              <select id="guestCount" name="guest_count" required>
-                <option value="">Select</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label id="labelGuestNames" for="guestNames">Names of All Guests</label>
-              <textarea id="guestNames" name="guest_names" placeholder="List everyone attending"></textarea>
-            </div>
-            <div class="field full">
-              <label id="labelNotes" for="notes">Notes</label>
-              <textarea id="notes" name="notes" placeholder="Dietary restrictions, questions, or anything else"></textarea>
-            </div>
-          </div>
-          <button class="btn-gold submit" type="submit" id="submitBtn">Send RSVP</button>
-        </form>
+Please join us for an evening of dinner and dancing at the Jones residency.
 
-        <div class="success-note" id="successNote">
-          Thank you. Your RSVP has been received.
-        </div>
+<br><br>
 
-        <div class="error-note" id="errorNote">
-          There was a problem sending the RSVP. Please try again.
-        </div>
+Cocktail hour begins at 5:30 PM.  
+Followed by a formal dinner at 6:00 PM
 
-        <div class="foot">
-          Built for Netlify Forms. After publishing, enable submission notifications in Netlify and send them to <strong>kbjones891@gmail.com</strong>.
-        </div>
-      </section>
-    </div>
-  </div>
+<br><br>
 
-  <script>
-    const translations = {
-      en: {
-        images: ['IMG_8249.JPEG','IMG_8249_2.JPEG'],
-        langField: 'English',
-        name: 'Full Name',
-        phone: 'Phone Number',
-        email: 'Email Address',
-        count: 'How Many Attending?',
-        countPlaceholder: 'Select',
-        guestNames: 'Names of All Guests',
-        guestNamesPlaceholder: 'List everyone attending',
-        notes: 'Notes',
-        notesPlaceholder: 'Dietary restrictions, questions, or anything else',
-        submit: 'Send RSVP',
-        success: 'Thank you. Your RSVP has been received.',
-        error: 'There was a problem sending the RSVP. Please try again.'
-      },
-      es: {
-        images: ['IMG_8251.JPEG','IMG_8251_2.JPEG'],
-        langField: 'Español',
-        name: 'Nombre Completo',
-        phone: 'Número de Teléfono',
-        email: 'Correo Electrónico',
-        count: '¿Cuántas Personas Asistirán?',
-        countPlaceholder: 'Seleccione',
-        guestNames: 'Nombres de Todos los Invitados',
-        guestNamesPlaceholder: 'Escriba los nombres de quienes asistirán',
-        notes: 'Notas',
-        notesPlaceholder: 'Restricciones alimenticias, preguntas o cualquier otro detalle',
-        submit: 'Enviar RSVP',
-        success: 'Gracias. Su confirmación ha sido recibida.',
-        error: 'Hubo un problema al enviar la confirmación. Inténtelo de nuevo.'
-      }
-    };
+YOUR PRESENCE AT OUR WEDDING IS THE GREATEST GIFT OF ALL. HOWEVER, SHOULD YOU WISH TO HONOUR US WITH A GIFT, A WISHING WELL WILL BE AVAILABLE AT THE RECEPTION FOR YOUR CONTRIBUTION AND BEST WISHES
 
-    const params = new URLSearchParams(window.location.search);
-    let currentLang = params.get('lang') === 'es' ? 'es' : 'en';
+<br><br>
 
-    const inviteGallery = document.getElementById('inviteGallery');
-    const form = document.getElementById('rsvpForm');
-    const successNote = document.getElementById('successNote');
-    const errorNote = document.getElementById('errorNote');
-    const languageField = document.getElementById('languageField');
-    const linkEn = document.getElementById('linkEn');
-    const linkEs = document.getElementById('linkEs');
-    const langEn = document.querySelector('.lang-en');
-    const langEs = document.querySelector('.lang-es');
-    const declineNotes = document.querySelectorAll('[data-decline-note]');
+Thank you so much
 
-    function applyLanguage(lang) {
-      currentLang = lang;
-      const t = translations[lang];
-      inviteGallery.innerHTML = '';
-      t.images.forEach(img => {
-        const image = document.createElement('img');
-        image.className = 'invite-image';
-        image.src = img;
-        inviteGallery.appendChild(image);
-      });
-      languageField.value = t.langField;
+</div>
 
-      langEn.classList.toggle('hidden', lang !== 'en');
-      langEs.classList.toggle('hidden', lang !== 'es');
-      linkEn.classList.toggle('active', lang === 'en');
-      linkEs.classList.toggle('active', lang === 'es');
+<div class="rsvp">
 
-      document.getElementById('labelName').textContent = t.name;
-      document.getElementById('labelPhone').textContent = t.phone;
-      document.getElementById('labelEmail').textContent = t.email;
-      document.getElementById('labelCount').textContent = t.count;
-      document.getElementById('guestCount').options[0].textContent = t.countPlaceholder;
-      document.getElementById('labelGuestNames').textContent = t.guestNames;
-      document.getElementById('guestNames').placeholder = t.guestNamesPlaceholder;
-      document.getElementById('labelNotes').textContent = t.notes;
-      document.getElementById('notes').placeholder = t.notesPlaceholder;
-      document.getElementById('submitBtn').textContent = t.submit;
-      successNote.textContent = t.success;
-      errorNote.textContent = t.error;
-    }
+<button class="yes" onclick="showForm()">Yes I will attend</button>
+<button class="no">Unable to attend</button>
 
-    applyLanguage(currentLang);
+</div>
 
-    document.querySelectorAll('[data-open-form]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        form.classList.add('show');
-        successNote.style.display = 'none';
-        errorNote.style.display = 'none';
-        declineNotes.forEach(note => note.style.display = 'none');
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+<form id="form" name="wedding-rsvp" method="POST" data-netlify="true">
 
-    document.querySelectorAll('[data-decline]').forEach((btn, idx) => {
-      btn.addEventListener('click', () => {
-        form.classList.remove('show');
-        successNote.style.display = 'none';
-        errorNote.style.display = 'none';
-        declineNotes.forEach(note => note.style.display = 'none');
-        if (declineNotes[idx]) declineNotes[idx].style.display = 'block';
-      });
-    });
+<input type="hidden" name="form-name" value="wedding-rsvp">
 
-    function encode(data) {
-      return new URLSearchParams(data).toString();
-    }
+<input placeholder="Full Name" name="name" required>
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      successNote.style.display = 'none';
-      errorNote.style.display = 'none';
+<input placeholder="Phone" name="phone" required>
 
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
+<input placeholder="Email" name="email" required>
 
-      try {
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode(data)
-        });
+<textarea placeholder="Guest names"></textarea>
 
-        if (response.ok) {
-          form.reset();
-          form.classList.remove('show');
-          successNote.style.display = 'block';
-          successNote.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          errorNote.style.display = 'block';
-        }
-      } catch (err) {
-        errorNote.style.display = 'block';
-      }
-    });
-  </script>
+<button class="submit">Send RSVP</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showForm(){
+document.getElementById("form").style.display="block"
+}
+
+</script>
+
 </body>
 </html>
