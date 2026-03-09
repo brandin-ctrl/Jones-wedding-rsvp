@@ -8,16 +8,16 @@
   <meta name="description" content="Berenice and Ricky wedding invitation and RSVP." />
   <style>
     :root {
-      --bg: #0d1114;
-      --bg-2: #13191d;
-      --paper: rgba(15, 19, 22, 0.76);
-      --paper-2: rgba(255,255,255,0.04);
-      --gold: #d4b07a;
-      --gold-soft: #b99058;
-      --cream: #f3eadb;
-      --muted: #dbcdb8;
-      --line: rgba(212, 176, 122, 0.32);
-      --shadow: 0 24px 80px rgba(0,0,0,0.46);
+      --bg: #1f3f36;
+      --bg-2: #274b41;
+      --paper: rgba(27, 57, 49, 0.82);
+      --paper-2: rgba(255,255,255,0.05);
+      --gold: #d4af37;
+      --gold-soft: #b7902a;
+      --cream: #f7f3e9;
+      --muted: #eadfca;
+      --line: rgba(212, 175, 55, 0.30);
+      --shadow: 0 24px 80px rgba(0,0,0,0.34);
     }
 
     * { box-sizing: border-box; }
@@ -29,9 +29,9 @@
       color: var(--cream);
       font-family: 'Playfair Display', Georgia, serif;
       background:
-        radial-gradient(circle at top left, rgba(212,176,122,0.14), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(212,176,122,0.10), transparent 34%),
-        linear-gradient(180deg, #0a0e11 0%, #10161a 100%);
+        radial-gradient(circle at top left, rgba(212,175,55,0.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(77, 120, 104, 0.16), transparent 34%),
+        linear-gradient(180deg, #1f3f36 0%, #274b41 100%);
       min-height: 100vh;
     }
 
@@ -149,63 +149,70 @@
       position: relative;
       padding: 34px 32px;
       background:
-        radial-gradient(circle at top right, rgba(212,176,122,0.08), transparent 26%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.10), transparent 26%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.05), transparent 28%),
         linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
     }
 
     .crest {
       color: var(--gold);
-      font-size: clamp(3.5rem, 9vw, 5.6rem);
+      font-size: clamp(4.1rem, 10vw, 6rem);
       font-family: 'Great Vibes', cursive;
       text-align: center;
       line-height: 0.9;
-      margin-top: 4px;
-      margin-bottom: 16px;
-      opacity: 0.9;
+      margin-top: 0;
+      margin-bottom: 10px;
+      opacity: 0.98;
+      text-shadow: 0 2px 18px rgba(212,175,55,0.22);
     }
 
     .eyebrow {
       text-align: center;
       color: var(--gold);
-      letter-spacing: 0.32em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      font-size: 0.73rem;
-      font-family: Arial, Helvetica, sans-serif;
-      margin-bottom: 16px;
+      font-size: 0.78rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .names {
       text-align: center;
-      font-size: clamp(3.2rem, 7vw, 5.8rem);
+      font-size: clamp(4rem, 8vw, 6.2rem);
       font-family: 'Great Vibes', cursive;
-      line-height: 0.9;
-      margin-bottom: 10px;
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 18px rgba(212,176,122,0.18);
+      line-height: 0.84;
+      margin-bottom: 2px;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 18px rgba(212,175,55,0.16);
+      color: #fbf6ed;
     }
 
     .amp {
       text-align: center;
-      font-size: 1.7rem;
+      font-size: 1.55rem;
       color: var(--gold);
       margin: 2px 0 6px;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
+      font-weight: 500;
     }
 
     .date {
       text-align: center;
-      font-size: 1.34rem;
+      font-size: 1.12rem;
       letter-spacing: 0.34em;
       color: var(--muted);
-      margin: 22px 0 28px;
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 18px 0 16px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       text-transform: uppercase;
     }
 
     .section {
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-      margin-top: 18px;
+      border-top: 0;
+      padding-top: 16px;
+      margin-top: 16px;
     }
 
     .section:first-of-type {
@@ -225,8 +232,9 @@
 
     .text {
       line-height: 1.75;
-      font-size: 1.03rem;
+      font-size: 1.12rem;
       color: var(--cream);
+      font-family: 'Playfair Display', serif;
     }
 
     .script {
@@ -246,19 +254,20 @@
     }
 
     .rsvp-title {
-      font-size: 1.8rem;
+      font-size: 2.35rem;
       text-align: center;
       margin: 0 0 10px;
       font-family: 'Great Vibes', cursive;
       font-weight: 400;
+      color: #fbf5ec;
     }
 
     .rsvp-copy {
       text-align: center;
       color: var(--muted);
       line-height: 1.7;
-      font-size: 0.98rem;
-      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.02rem;
+      font-family: 'Playfair Display', serif;
       margin-bottom: 18px;
     }
 
@@ -425,6 +434,7 @@
           <div class="amp">and</div>
           <div class="names">Ricky</div>
           <div class="date">23 May 2026</div>
+          <div style="width: 140px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 10px;"></div>
 
           <div class="section" style="text-align:center; max-width: 520px; margin: 0 auto;">
             <div class="text">
@@ -453,6 +463,7 @@
           <div class="amp">y</div>
           <div class="names">Ricky</div>
           <div class="date">23 Mayo 2026</div>
+          <div style="width: 140px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 10px;"></div>
 
           <div class="section" style="text-align:center; max-width: 520px; margin: 0 auto;">
             <div class="text">
